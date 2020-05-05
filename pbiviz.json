@@ -1,0 +1,27 @@
+{
+  "visual": {
+    "name": "pBIplotly",
+    "displayName": "PBI_plotly",
+    "guid": "pBIplotlyAFEA9760BDCA4473BEA802445EC7558B",
+    "visualClassName": "Visual",
+    "version": "1.0.0",
+    "description": "",
+    "supportUrl": "",
+    "gitHubUrl": ""
+  },
+  "apiVersion": "2.5.0",
+  "author": {
+    "name": "Xiangnan Dang",
+    "email": "dang_xiangnan@lilly.com"
+  },
+  "assets": {
+    "icon": "assets/icon.png"
+  },
+  "externalJS": [
+    "node_modules/powerbi-visuals-utils-dataviewutils/lib/index.js"
+  ],
+  "style": "style/visual.less",
+  "capabilities": "capabilities.json",
+  "dependencies": "dependencies.json",
+  "stringResources": []
+}

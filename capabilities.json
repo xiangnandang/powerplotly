@@ -1,0 +1,532 @@
+{
+  "dataRoles": [
+    {
+      "displayName": "x",
+      "description": "show on x axis",
+      "kind": "GroupingOrMeasure",
+      "name": "x"
+    },
+    {
+      "displayName": "y",
+      "description": "show on y axis",
+      "kind": "GroupingOrMeasure",
+      "name": "y"
+    },
+    {
+      "displayName": "y error",
+      "description": "show on y error",
+      "kind": "GroupingOrMeasure",
+      "name": "yerror"
+    },
+    {
+      "displayName": "color",
+      "description": "color",
+      "kind": "GroupingOrMeasure",
+      "name": "color"
+    },
+    {
+      "displayName": "facet_row",
+      "description": "row for facet_grid",
+      "kind": "Grouping",
+      "name": "facet_row"
+    },
+    {
+      "displayName": "facet_col",
+      "description": "column for facet_grid",
+      "kind": "Grouping",
+      "name": "facet_col"
+    },
+    {
+      "displayName": "Tooltips",
+      "description": "Fields to be used as mouseover tooltips",
+      "kind": "Grouping",
+      "name": "tooltips"
+    }
+  ],
+  "dataViewMappings": [
+    {
+      "conditions": [
+        {
+          "x": {
+            "max": 1
+          },
+          "y": {
+            "max": 1
+          },
+          "tooltips": {
+            "max": 7
+          }
+        }
+      ],
+      "scriptResult": {
+        "dataInput": {
+          "table": {
+            "rows": {
+              "select": [
+                {
+                  "for": {
+                    "in": "x"
+                  }
+                },
+                {
+                  "for": {
+                    "in": "y"
+                  }
+                },
+                {
+                  "for": {
+                    "in": "color"
+                  }
+                },
+                {
+                  "for": {
+                    "in": "facet_row"
+                  }
+                },
+                {
+                  "for": {
+                    "in": "facet_col"
+                  }
+                },
+                {
+                  "for": {
+                    "in": "tooltips"
+                  }
+                }
+              ],
+              "dataReductionAlgorithm": {
+                "top": {}
+              }
+            }
+          }
+        },
+        "script": {
+          "scriptProviderDefault": "R",
+          "scriptOutputType": "html",
+          "source": {
+            "objectName": "rcv_script",
+            "propertyName": "source"
+          },
+          "provider": {
+            "objectName": "rcv_script",
+            "propertyName": "provider"
+          }
+        }
+      }
+    }
+  ],
+  "objects": {
+    "settings_saving_params": {
+      "displayName": "Save Interactive Visual",
+      "description": "Save Interactive Visual settings",
+      "properties": {
+        "show": {
+          "displayName": "Save Interactive Visual",
+          "description": "Save Interactive Visual description.",
+          "type": {
+            "bool": true
+          }
+        }
+      }
+    },
+    "settings_fitting_params": {
+      "displayName": "Fitting",
+      "description": "Fitting settings",
+      "properties": {
+        "show": {
+          "displayName": "Fitting",
+          "description": "Fitting description.",
+          "type": {
+            "bool": true
+          }
+        },
+        "equation": {
+          "displayName": "Equation",
+          "description": "Equation description.",
+          "type": {
+            "bool": true
+          }
+        },
+        "equationsize": {
+          "displayName": "Equation Size",
+          "description": "Equation Size description.",
+          "type": {
+            "numeric": true
+          }
+        },
+        "equationx": {
+          "displayName": "Equation x position",
+          "description": "Equation x position description.",
+          "type": {
+            "numeric": true
+          }
+        },
+        "equationy": {
+          "displayName": "Equation y position",
+          "description": "Equation y position description.",
+          "type": {
+            "numeric": true
+          }
+        },
+        "lineWidth": {
+          "displayName": "Line width",
+          "description": "Line width description.",
+          "type": {
+            "numeric": true
+          }
+        },
+        "se": {
+          "displayName": "Standard Error",
+          "description": "Standard Error description.",
+          "type": {
+            "bool": true
+          }
+        },
+        "level": {
+          "displayName": "Confidence Interval level",
+          "description": "Confidence Interval level description.",
+          "type": {
+            "enumeration": [
+              {
+                "displayName": "0.95",
+                "value": "0.95"
+              },
+              {
+                "displayName": "0.9",
+                "value": "0.9"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "settings_scatter_params": {
+      "displayName": "Scatter",
+      "description": "Scatter settings",
+      "properties": {
+        "size": {
+          "displayName": "Size",
+          "description": "Size description.",
+          "type": {
+            "numeric": true
+          }
+        },
+        "color": {
+          "displayName": "Color",
+          "description": "Color settings",
+          "type": {
+            "fill": {
+              "solid": {
+                "color": true
+              }
+            }
+          }
+        },
+        "opacity": {
+          "displayName": "Opacity",
+          "description": "Opacity description.",
+          "type": {
+            "numeric": true
+          }
+        }
+      }
+    },
+    "settings_xaxis_params": {
+      "displayName": "x axis",
+      "description": "x axis settings",
+      "properties": {
+        "factor": {
+          "displayName": "Factor",
+          "description": "Factor description.",
+          "type": {
+            "bool": true
+          }
+        },
+        "xstart": {
+          "displayName": "x start",
+          "description": "x start description.",
+          "type": {
+            "numeric": true
+          }
+        },
+        "xend": {
+          "displayName": "x end",
+          "description": "x end description.",
+          "type": {
+            "numeric": true
+          }
+        },
+        "xtitle": {
+          "displayName": "x title",
+          "description": "x title description.",
+          "type": {
+            "text": true
+          }
+        },
+        "xtitlesize": {
+          "displayName": "x title size",
+          "description": "x title size description.",
+          "type": {
+            "numeric": true
+          }
+        },
+        "xtextsize": {
+          "displayName": "x text size",
+          "description": "x text size description.",
+          "type": {
+            "numeric": true
+          }
+        }
+      }
+    },
+    "settings_yaxis_params": {
+      "displayName": "y axis",
+      "description": "y axis settings",
+      "properties": {
+        "factor": {
+          "displayName": "Factor",
+          "description": "Factor description.",
+          "type": {
+            "bool": true
+          }
+        },
+        "ystart": {
+          "displayName": "y start",
+          "description": "y start description.",
+          "type": {
+            "numeric": true
+          }
+        },
+        "yend": {
+          "displayName": "y end",
+          "description": "y end description.",
+          "type": {
+            "numeric": true
+          }
+        },
+        "ytitle": {
+          "displayName": "y title",
+          "description": "y title description.",
+          "type": {
+            "text": true
+          }
+        },
+        "ytitlesize": {
+          "displayName": "y title size",
+          "description": "y title size description.",
+          "type": {
+            "numeric": true
+          }
+        },
+        "ytextsize": {
+          "displayName": "y text size",
+          "description": "y text size description.",
+          "type": {
+            "numeric": true
+          }
+        }
+      }
+    },
+    "settings_legend_params": {
+      "displayName": "Legend",
+      "description": "Legend settings",
+      "properties": {
+        "factor": {
+          "displayName": "Factor",
+          "description": "Factor description.",
+          "type": {
+            "bool": true
+          }
+        },
+        "colortitle": {
+          "displayName": "color title",
+          "description": "color title description.",
+          "type": {
+            "text": true
+          }
+        },
+        "colortitlesize": {
+          "displayName": "color title size",
+          "description": "color title size description.",
+          "type": {
+            "numeric": true
+          }
+        },
+        "colortextsize": {
+          "displayName": "color text size",
+          "description": "color text size description.",
+          "type": {
+            "numeric": true
+          }
+        }
+      }
+    },
+    "settings_facetgrid_params": {
+      "displayName": "Facet Grid",
+      "description": "Facet Grid settings",
+      "properties": {
+        "scales": {
+          "displayName": "Scales",
+          "description": "Scales description.",
+          "type": {
+            "enumeration": [
+              {
+                "displayName": "fixed",
+                "value": "fixed"
+              },
+              {
+                "displayName": "free_x",
+                "value": "free_x"
+              },
+              {
+                "displayName": "free_y",
+                "value": "free_y"
+              },
+              {
+                "displayName": "free",
+                "value": "free"
+              }
+            ]
+          }
+        },
+        "space": {
+          "displayName": "Space",
+          "description": "Space description.",
+          "type": {
+            "enumeration": [
+              {
+                "displayName": "fixed",
+                "value": "fixed"
+              },
+              {
+                "displayName": "free_x",
+                "value": "free_x"
+              },
+              {
+                "displayName": "free_y",
+                "value": "free_y"
+              },
+              {
+                "displayName": "free",
+                "value": "free"
+              }
+            ]
+          }
+        },
+        "labeller": {
+          "displayName": "Labeller",
+          "description": "Labeller description.",
+          "type": {
+            "enumeration": [
+              {
+                "displayName": "label_both",
+                "value": "label_both"
+              },
+              {
+                "displayName": "label_value",
+                "value": "label_value"
+              }
+            ]
+          }
+        },
+        "horizontaltextsize": {
+          "displayName": "horizontal text size",
+          "description": "horizontal text size description.",
+          "type": {
+            "numeric": true
+          }
+        },
+        "verticaltextsize": {
+          "displayName": "vertical text size",
+          "description": "vertical text size description.",
+          "type": {
+            "numeric": true
+          }
+        }
+      }
+    },
+    "settings_title_params": {
+      "displayName": "Title",
+      "description": "Title settings",
+      "properties": {
+        "title": {
+          "displayName": "title",
+          "description": "title description.",
+          "type": {
+            "text": true
+          }
+        },
+        "fontsize": {
+          "displayName": "font size",
+          "description": "font size description.",
+          "type": {
+            "numeric": true
+          }
+        }
+      }
+    },
+    "settings_theme_params": {
+      "displayName": "Theme",
+      "description": "Theme settings",
+      "properties": {
+        "theme": {
+          "displayName": "theme",
+          "description": "theme description.",
+          "type": {
+            "enumeration": [
+              {
+                "displayName": "gray",
+                "value": "gray"
+              },
+              {
+                "displayName": "bw",
+                "value": "bw"
+              },
+              {
+                "displayName": "linedraw",
+                "value": "linedraw"
+              },
+              {
+                "displayName": "light",
+                "value": "light"
+              },
+              {
+                "displayName": "dark",
+                "value": "dark"
+              },
+              {
+                "displayName": "minimal",
+                "value": "minimal"
+              },
+              {
+                "displayName": "classic",
+                "value": "classic"
+              },
+              {
+                "displayName": "void",
+                "value": "void"
+              }
+            ]
+          }
+        }
+      }
+    },
+    "rcv_script": {
+      "properties": {
+        "provider": {
+          "type": {
+            "text": true
+          }
+        },
+        "source": {
+          "type": {
+            "scripting": {
+              "source": true
+            }
+          }
+        }
+      }
+    }
+  },
+  "suppressDefaultTitle": true
+}
